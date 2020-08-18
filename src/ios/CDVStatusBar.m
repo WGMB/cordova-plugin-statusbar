@@ -92,10 +92,10 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
 
 -(void)cordovaViewWillAppear:(NSNotification*)notification
 {
- __weak CDVStatusBar* weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [weakSelf resizeWebView];
-    });
+//  __weak CDVStatusBar* weakSelf = self;
+//     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//         [weakSelf resizeWebView];
+//     });
 }
 
 -(void)statusBarDidChangeFrame:(NSNotification*)notification
