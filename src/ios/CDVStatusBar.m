@@ -110,6 +110,14 @@ static const void *kStatusBarStyle = &kStatusBarStyle;
 
 - (void)pluginInitialize
 {
+
+	 // Enable fullscreen on iPhone X
+	   #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
+	   if (@available(iOS 11.0, *)) {
+		   [self.webView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+	   }
+	   #endif
+
     // init
     NSNumber* uiviewControllerBasedStatusBarAppearance = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"UIViewControllerBasedStatusBarAppearance"];
     _uiviewControllerBasedStatusBarAppearance = (uiviewControllerBasedStatusBarAppearance == nil || [uiviewControllerBasedStatusBarAppearance boolValue]);
